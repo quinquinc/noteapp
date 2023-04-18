@@ -3,7 +3,6 @@ from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from datetime import datetime
 from sqlalchemy_utils import database_exists, create_database
 from config import url
-import docker
 import os
 import socket
 
@@ -14,11 +13,6 @@ port_id = 5432
 
 postgres_host = 'postgres'
 ip_address = socket.gethostbyname(postgres_host)
-
-# client = docker.from_env()
-# container = client.containers.get('postgres')
-# ip_address = container.attrs['NetworkSettings']['IPAddress']
-
 
 Base = declarative_base()
 url= f'postgresql://{username}:{pwd}@{ip_address}:{port_id}/{database}'
