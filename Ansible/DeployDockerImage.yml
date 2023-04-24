@@ -12,12 +12,12 @@
 
     - name: Construire l'image Docker web
       docker_image:
-        path: ~/home/admin/noteapp/Apache
+        path: /home/admin/noteapp/Apache
         dockerfile: app.dockerfile
         name: apache_image:1.0
         state: present
 
     - name: Lancer Docker Compose
       docker_compose:
-        project_src: ~/home/admin/noteapp/Apache/
+        project_src: /home/admin/noteapp/Apache/
         state: present
