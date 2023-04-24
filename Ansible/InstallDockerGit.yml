@@ -5,7 +5,7 @@
   tasks:
     - name: Installer les dépendances Docker
       apt:
-        name: ['apt-transport-https', 'ca-certificates', 'curl', 'gnupg', 'lsb-release']
+        name: ['apt-transport-https', 'ca-certificates', 'curl', 'gnupg2', 'lsb-release']
         state: present
 
     - name: Ajout clé Docker GPG
