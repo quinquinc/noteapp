@@ -21,6 +21,11 @@
       pip:
         name: docker-compose
         state: present
+    
+    - name: Créer le volume
+      docker_volume:
+        name: dbapp
+        state: present
 
     - name: Lancer Docker Compose
       docker_compose:
