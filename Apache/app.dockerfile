@@ -7,7 +7,7 @@ RUN apt install -y apache2 curl python3 pip libpq-dev apache2-dev libapache2-mod
         && pip3 install --upgrade pip 
 RUN apt clean
 
-COPY ./NoteApp/app /var/www/app
+COPY ../NoteApp/app /var/www/app
 RUN pip install -r /var/www/app/requirements.txt
 RUN mv /var/www/app/flask-noteapp.conf /etc/apache2/sites-available/
 RUN public_ip=$(curl -s ifconfig.me) && \
