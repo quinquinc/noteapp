@@ -2,8 +2,8 @@
 - name: Déployer une image Docker
   hosts: aws
   become: yes
-  vars:
-    ansible_python_interpreter: /usr/bin/python2.7
+  #vars:
+   # ansible_python_interpreter: /usr/bin/python2.7
   tasks:
     - name: Copier le Dockerfile sur la machine distante
       git:
