@@ -12,8 +12,8 @@
 
     - name: Construire l'image Docker web
       docker_image:
-        path: /home/admin/noteapp/Apache
-        dockerfile: app.dockerfile
+        path: /home/admin/noteapp
+        dockerfile: ./Apache/app.dockerfile
         name: apache_image:1.0
         state: present
 
