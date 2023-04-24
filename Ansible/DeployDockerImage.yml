@@ -5,11 +5,6 @@
   vars:
     ansible_python_interpreter: /usr/bin/python2.7
   tasks:
-    - name: Install Python 2.7
-      apt:
-        name: python2.7
-        state: present
-        
     - name: Copier le Dockerfile sur la machine distante
       git:
         repo: https://github.com/quinquinc/noteapp
