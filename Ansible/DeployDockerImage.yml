@@ -6,7 +6,7 @@
     - name: Copier le Dockerfile sur la machine distante
       git:
         repo: https://github.com/quinquinc/noteapp
-        dest: /home/admin
+        dest: /home/admin/noteapp
 
     - name: Construire l'image Docker web
       docker_image:
