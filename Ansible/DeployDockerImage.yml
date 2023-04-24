@@ -1,0 +1,20 @@
+---
+- name: Déployer une image Docker
+  hosts: aws
+  become: yes
+  tasks:
+    - name: Copier le Dockerfile sur la machine distante
+      git:
+        repo: https://github.com/quinquinc/noteapp
+        dest: /home/admin
+
+    - name: Construire l'image Docker web
+      docker_image:
+        path: /home/admin/noteapp/Apache/app.dockerfile
+        name: apache_image:1.0
+        state: present
+
+    - name: Lancer Docker Compose
+      docker_compose:
+        project_src: /home/admin/noteapp/Apache/docker-compose.yml
+        state: present
