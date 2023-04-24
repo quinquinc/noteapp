@@ -16,6 +16,11 @@
         dockerfile: ./Apache/app.dockerfile
         name: apache_image:1.0
         state: present
+        
+    - name: Installer Docker Compose
+      pip:
+        name: docker-compose
+        state: present
 
     - name: Lancer Docker Compose
       docker_compose:
