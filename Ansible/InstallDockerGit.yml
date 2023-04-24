@@ -5,6 +5,7 @@
   tasks:
     - name: Installer les dépendances Docker
       apt:
+        update_cache: true
         name: ['apt-transport-https', 'ca-certificates', 'curl', 'gnupg2', 'lsb-release']
         state: present
 
