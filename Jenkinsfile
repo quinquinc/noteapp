@@ -6,7 +6,7 @@ pipeline {
       steps {
         // Récupère les playbooks Ansible depuis le dépôt Git
         checkout([$class: 'GitSCM', 
-          branches: [[name: '*/main']], 
+          branches: [[name: '*/master']], 
           doGenerateSubmoduleConfigurations: false, 
           extensions: [], 
           submoduleCfg: [], 
