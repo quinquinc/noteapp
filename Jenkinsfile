@@ -11,14 +11,14 @@ pipeline {
     stage('Install Docker') {
       steps {
         // Exécute les commandes Ansible pour déployer les playbooks sur lagent Node 1
-        sh 'ansible-playbook -i Ansible/inventory Ansible/InstallDockerGit.yml'
+        sh 'ansible-playbook -i Test/Ansible/inventory Test/Ansible/InstallDockerGit.yml'
       }
     }
 
     stage('Deploy') {
       steps {
         // Exécute les commandes Ansible pour déployer les playbooks sur lagent Node 1
-        sh 'ansible-playbook -i Ansible/inventory Ansible/DeployDockerImage.yml'
+        sh 'ansible-playbook -i Test/Ansible/inventory Test/Ansible/DeployDockerImage.yml'
       }
     }
 
