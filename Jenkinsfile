@@ -30,6 +30,7 @@ pipeline {
       }
       steps {
         // Exécute les commandes Ansible pour déployer les playbooks sur l'agent distant
+        withEnv(["ANSIBLE_CONFIG=Ansible/ansible.cfg"])
         sh "ansible-playbook -i Ansible/inventory --user='${remoteUser}' --private-key='${sshKey}' Ansible/InstallDockerGit.yml"
       }
     }
