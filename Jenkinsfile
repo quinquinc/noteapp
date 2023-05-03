@@ -14,13 +14,13 @@ pipeline {
         ])
       }
     }
-    stage('Install Ansible') {
-      agent { node { label 'Node1' } }
-      steps {
+    //stage('Install Ansible') {
+      //agent { node { label 'Node1' } }
+      //steps {
         // Installe Ansible sur l'agent Jenkins appelé Node1
-        ansibleInstallation('ansible')
-      }
-    }
+        //ansibleInstallation('ansible')
+      //}
+    //}
     stage('Deploy') {
       agent { node { label 'Node1' } }
       environment {
