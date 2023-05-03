@@ -25,7 +25,7 @@ pipeline {
       agent { node { label 'Node1' } }
       environment {
         // Définit les variables d'environnement pour l'utilisateur distant et les informations d'authentification SSH
-        remoteUser = 'admin@ip-172-31-45-159'
+        remoteUser = 'admin@ip-172-31-37-32'
         sshKey = credentials('id_rsa.pub')
       }
       steps {
