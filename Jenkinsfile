@@ -22,7 +22,12 @@ pipeline {
       //}
     //}
     stage('Install Docker Git etc') {      
-      agent { node { label 'maître'} }
+      agent { node { label 'ansible'} }
+      environment {
+        // Définit les variables d'environnement pour l'utilisateur distant et les informations d'authentification SSH
+        remoteUser = 'admin'
+        sshKey = credentials('f957cf33-a10a-43b0-90ff-cdb2ab0153cf')
+      }
       steps {
         // Exécute les commandes Ansible pour déployer les playbooks sur l'agent distant
         withEnv(["ANSIBLE_CONFIG=Ansible/ansible.cfg"]) {
@@ -32,7 +37,12 @@ pipeline {
     }
     
     stage('Deploiement image') {
-      agent { node { label 'maître'} }      
+      agent { node { label 'ansible'} }
+      environment {
+        // Définit les variables d'environnement pour l'utilisateur distant et les informations d'authentification SSH
+        remoteUser = 'admin'
+        sshKey = credentials('f957cf33-a10a-43b0-90ff-cdb2ab0153cf')
+      }      
       steps {
         // Exécute les commandes Ansible pour déployer les playbooks sur l'agent distant
         withEnv(["ANSIBLE_CONFIG=Ansible/ansible.cfg"]) {
