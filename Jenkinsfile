@@ -13,14 +13,7 @@ pipeline {
           userRemoteConfigs: [[url: 'https://github.com/quinquinc/noteapp.git']]
         ])
       }
-    }
-    //stage('Install Ansible') {
-      //agent { node { label 'Node1' } }
-      //steps {
-        // Installe Ansible sur l'agent Jenkins appelé Node1
-        //ansibleInstallation('ansible')
-      //}
-    //}
+    }    
     stage('Install Docker Git etc') {      
       agent { node { label 'ansible'} }
       environment {
