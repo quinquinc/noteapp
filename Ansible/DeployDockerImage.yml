@@ -1,0 +1,33 @@
+---
+- name: Déployer une image Docker
+  hosts: aws
+  become: yes
+  #vars:
+   # ansible_python_interpreter: /usr/bin/python2.7
+  tasks:
+    - name: Copier le Dockerfile sur la machine distante
+      git:
+        repo: https://github.com/quinquinc/noteapp
+        dest: /home/admin/noteapp
+
+    - name: Construire l'image Docker web
+      docker_image:
+        path: /home/admin/noteapp
+        dockerfile: ./Apache/app.dockerfile
+        name: apache_image:1.0
+        state: present
+        
+    - name: Installer Docker Compose
+      pip:
+        name: docker-compose
+        state: present
+    
+    - name: Créer le volume
+      docker_volume:
+        name: dbapp
+        state: present
+
+    - name: Lancer Docker Compose
+      docker_compose:
+        project_src: /home/admin/noteapp/Apache/
+        state: present
