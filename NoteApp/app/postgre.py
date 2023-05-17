@@ -15,7 +15,7 @@ postgres_host = 'postgres'
 ip_address = socket.gethostbyname(postgres_host)
 
 Base = declarative_base()
-url= f'postgresql://{username}:{pwd}@{ip_address}:{port_id}/{database}'
+url= f'postgresql://{username}:{pwd}@terraform-20230517123017087400000002.cpj4tdtofjrz.eu-west-3.rds.amazonaws.com:5432:{port_id}/{database}'
 engine = create_engine(f'{url}', echo=True)
 Session = sessionmaker()
 

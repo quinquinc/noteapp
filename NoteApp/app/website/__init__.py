@@ -18,7 +18,7 @@ db = SQLAlchemy()
 
 
 locale_session = Session(bind=engine)
-url= f'postgresql://{username}:{pwd}@{ip_address}:{port_id}/{database}'
+url= f'postgresql://{username}:{pwd}@terraform-20230517123017087400000002.cpj4tdtofjrz.eu-west-3.rds.amazonaws.com:5432:{port_id}/{database}'
 
 def create_app():
     app = Flask(__name__) # App initialization
