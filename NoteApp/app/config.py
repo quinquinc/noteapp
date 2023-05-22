@@ -9,4 +9,4 @@ username= os.environ.get('POSTGRES_USER')
 pwd = os.environ.get('POSTGRES_PASSWORD')
 
 
-url= f'postgresql://{username}:{pwd}@10.0.1.22:5432/{database}'
+url= f'postgresql://{username}:{pwd}@10.0.1.85:5432/{database}'
