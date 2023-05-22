@@ -19,7 +19,7 @@ pipeline {
       environment {
         // Définit les variables d'environnement pour l'utilisateur distant et les informations d'authentification SSH
         remoteUser = 'admin'
-        sshKey = credentials('c1fc803b-5ba3-4298-91c9-d107d0f0355a')
+        sshKey = credentials('b8fad3cf-dd56-4a23-82a8-de55c11a9f1d')
       }
       steps {
         // Exécute les commandes Ansible pour déployer les playbooks sur l'agent distant
@@ -34,7 +34,7 @@ pipeline {
       environment {
         // Définit les variables d'environnement pour l'utilisateur distant et les informations d'authentification SSH
         remoteUser = 'admin'
-        sshKey = credentials('c1fc803b-5ba3-4298-91c9-d107d0f0355a')
+        sshKey = credentials('b8fad3cf-dd56-4a23-82a8-de55c11a9f1d')
       }      
       steps {
         // Exécute les commandes Ansible pour déployer les playbooks sur l'agent distant
