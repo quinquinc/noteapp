@@ -12,7 +12,7 @@ pwd = os.environ.get('POSTGRES_PASSWORD')
 
 
 postgres_host = 'postgres'
-ip_address = socket.gethostbyname(postgres_host)
+# ip_address = socket.gethostbyname(postgres_host)
 
 Base = declarative_base()
 url= f'postgresql://{username}:{pwd}@10.0.1.85:5432/{database}'
