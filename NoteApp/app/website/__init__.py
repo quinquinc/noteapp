@@ -18,7 +18,7 @@ db = SQLAlchemy()
 
 
 locale_session = Session(bind=engine)
-url= f'postgresql://{username}:{pwd}@{ip_address}:5432/{database}'
+url= f'postgresql://{username}:{pwd}@10.0.1.22:5432/{database}'
 
 def create_app():
     app = Flask(__name__) # App initialization

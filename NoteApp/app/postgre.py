@@ -15,7 +15,7 @@ postgres_host = 'postgres'
 ip_address = socket.gethostbyname(postgres_host)
 
 Base = declarative_base()
-url= f'postgresql://{username}:{pwd}@{ip_address}:5432/{database}'
+url= f'postgresql://{username}:{pwd}@10.0.1.22:5432/{database}'
 engine = create_engine(f'{url}', echo=True)
 Session = sessionmaker()
 
