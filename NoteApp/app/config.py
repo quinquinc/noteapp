@@ -9,4 +9,4 @@ username= os.environ.get('POSTGRES_USER')
 pwd = os.environ.get('POSTGRES_PASSWORD')
 
 
-url= f'postgresql://{username}:{pwd}@terraform-20230517123017087400000002.cpj4tdtofjrz.eu-west-3.rds.amazonaws.com:5432/{database}'
+url= f'postgresql://{username}:{pwd}@{ip_address}:5432/{database}'
